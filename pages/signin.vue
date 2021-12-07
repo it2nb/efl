@@ -1,0 +1,29 @@
+<template>
+  <div>
+    <v-row>
+      <v-col cols="12" md="5" class="mx-auto text-center">
+        <h1>เข้าสู่ระบบ</h1>
+        <form>
+          <v-text-field
+            v-model="userName"
+            label="ชื่อผู้ใช้"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="userPassword"
+            type="password"
+            label="รหัสผ่าน"
+            required
+          ></v-text-field>
+
+          <v-btn
+            class="mr-4"
+            @click="submit"
+          >
+            เข้าสู่ระบบ
+          </v-btn>
+        </form>
+      </v-col>
+    </v-row>
+  </div>
+</template>
