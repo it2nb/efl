@@ -38,10 +38,16 @@ export default {
   },
 
   methods: {
-    Login(event) {
+    async Login(event) {
       event.preventDefault()
-      console.log('User =',this.userName)
-      console.log('Pass =',this.userPassword)
+      let result = await this.$axios.$post('user.login.php', {
+        userName: this.userName,
+        userPassword: this.userPassword,
+      })
+
+      if(result.status === 'Success') {
+
+      }
     }
   }
 }

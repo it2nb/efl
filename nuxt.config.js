@@ -45,7 +45,14 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: '/Api/',
+    prefix: '/Api/',
+    proxy: true,
+  },
+  proxy: {
+    '/Api/': { target: 'http://localhost/efolioapi/', pathRewrite: {'^/Api/': ''} }
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
