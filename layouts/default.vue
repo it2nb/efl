@@ -60,8 +60,8 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'แฟ้มสะสมผลงาน',
-          to: '/portfolio'
+          title: 'สมัครสมาชิก',
+          to: '/signup'
         },
         {
           icon: 'mdi-chart-bubble',
