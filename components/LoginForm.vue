@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2'
 export default {
   data() {
     return {
@@ -46,7 +47,21 @@ export default {
       })
 
       if(result.status === 'Success') {
-
+        let user = result.data
+        if(user.userStatus === 'Enable') {
+          sessionStorage.setItem('loginuser', JSON.stringify(user))
+          if(user.userType === 'Admin') {
+            window.location.replace('./admin')
+          } else if(user.userType === 'Member') {
+            window.location.replace('./member')
+          }
+        } else {
+          Swal.fire({
+            title: 'ผิดพลาด',
+            text: 'ชื่อผู้ใช้นี้ยังไม่ได้อนุญาตให้ใช้งาน',
+            icon: 'warning'
+          })
+        }
       }
     }
   }
