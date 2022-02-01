@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h1>Member</h1>
     <UserinfoData :userID="loginuser.userID" />
+    <div class="mt-5 text-right">
+      <v-btn small color="warning">แก้ไข</v-btn>
+    </div>
   </div>
 </template>
 <script>
